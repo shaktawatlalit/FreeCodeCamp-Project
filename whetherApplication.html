@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+     <head>
+         <title> Whether API </title>
+         <link rel="icon" type="image/png" href="C:\Users\Lalit Singh\Desktop\fb1.png"/>
+         <meta charset="utf-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1">
+         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+         <style>
+              body
+                {
+                 opacity:0.5;
+                
+                }
+             .box
+                {
+                  border:1px solid black;
+                  border-radius:10px;
+                  width:70%;
+                  height:auto;
+                  margin:auto;
+                  margin-top:5%;
+                  background-color:aliceblue;
+                  z-index:-1;
+                }
+             .col-md-12
+                {
+                 text-align:center;
+                   
+                }
+             h1
+                {
+                 font-family:Raleway;
+                 color:blue;
+                 font-size:500%;
+                }
+             .para
+                {
+                 font-family:Raleway;
+                 color:black;
+                  font-size:400%;
+                }
+             .temp
+                {
+               color:peru;
+               font-size:300%;   
+                }
+             .clouds
+                {
+                 color:aqua;
+                 font-size:200%;
+                }
+            
+         </style>
+     </head>
+
+<body background="wether.jpg">
+      <div class="box">
+     
+           <div class="row">
+                   <div class="col-md-12">
+                       <header>
+                            <h1> Free Code Camp </h1>
+                            <h1> Weather App    </h1>
+
+                       </header>
+                       <div class="col-md-8 col-md-offset-2">
+                            
+                            <p class="para">   </p>
+                            <p class="temp">   </p>
+                            <p class="clouds"> </p>
+                            <p class="image">  </p>
+                       </div>
+                   </div>
+           </div>
+
+      </div>
+    
+     <script>
+          
+                  $(document).ready(function () {
+                             $.getJSON("http://ipinfo.io/json", function(data) {
+                                         $(".para").html(data.city +","+data.region);
+                                                
+                                 
+            $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=data.city&APPID=365e7e102e8c1d3088259bcc8f2a158d",function(data1)
+                                                    {  var p = parseInt(data1.main["temp"]);
+                                                          p=p-273.15;
+                                                          p=Math.floor(p);
+                                                          $(".temp").html(p+'<span style="font-size:15">'+"&deg;C"+'</span>');
+                                                          $(".clouds").html(data1.weather[0].main);
+                                                          var r=data1.weather[0].icon;
+                                                          var q ="http://openweathermap.org/img/w/"+r+".png"; 
+                                                          $(".image").html('<img src=" '+q+'" style="width:100px;height:100px;"/>'); 
+                           
+                                                     });
+                            
+                                                                                });
+                    
+                
+                                                   });
+        
+               
+             
+          
+          
+    </script>
+</body>
+
+</html>

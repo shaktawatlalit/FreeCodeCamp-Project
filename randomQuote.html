@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> </title>
+    <link rel="icon" type="image/png" href="C:\Users\Lalit Singh\Desktop\fb1.png"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <style>
+           .body1
+             {
+                 background-color:antiquewhite;
+             }
+           #box
+             {  border:2px black;
+                border-radius:10px; 
+                margin:10% auto auto auto;
+                width:500px;
+                background-color:aliceblue;
+             }
+            #textbox
+            {
+              width:500px;
+              padding-top:10%; 
+              text-align:center;
+              font-size:1.75em;
+              font-weight: 500;
+              padding-left:35px;
+              padding-right:35px;
+              word-wrap: break-word;
+            }
+            i
+            {
+               font-size:1em;
+            
+            }
+            #author
+            {  width:500px;
+               font-size:1.75em;
+               font-weight: 500;
+                padding-right:35px;
+               text-align:right;
+               
+            }
+           .buttons {
+                  width:450px;
+                  margin:auto;
+                   padding:15px;
+                  display:block;
+                  }
+                      .button {
+                           height:38px;
+                           border:1px;
+                           border-radius:3px;
+                           color:#fff;
+                           background-color:#333;
+                           outline:none;
+                           font-size:0.85em;
+                           padding: 8px 18px 6px 18px;
+                           opacity:1;
+                           cursor:pointer;
+                      }
+       &:hover {
+           opacity:0.9;
+               }
+      #tweet-quote,#tumblr-quote {
+                     
+                     padding:0px;
+                     padding-top:8px;
+                     text-align:center;
+                     font-size:1.2em;
+                     margin-right:5px;
+                     height:30px;
+                     width:60px;
+      }
+     #random
+        {   
+            
+            float:right;
+        }
+        #span1
+        {
+            word-wrap:break-word;
+        }
+    </style>
+</head>
+<body class="body1">
+     <div id="box">
+          <div id="textbox">
+              <i> <span class="glyphicon glyphicon-lamp glyphicon-align-left"></span>
+              </i> 
+              <span id="span1"> Lalit singh shaktawat Goyanda ka Rhne wala Hain Or wo Abhi Gandhinagar Rhta h.Is se Phle Wo Kota Rhta Tha.Or Us                     se phle wo ramganjmandi rhta tha
+                  </font> 
+          </div>
+          <div id="author">
+              -<span id="span2"> Lalit singh shaktawat
+              </span>
+          </div>
+          <div class="buttons row">
+               <a class="button" id="tweet-quote" title="Tweet this quote!" target="_blank">
+                     <i> <span class="glyphicon glyphicon-lamp glyphicon-align-left"></span>
+                     </i>
+              </a>
+              <a class="button" id="tumblr-quote" title="Post this quote on tumblr!" target="_blank">
+                   <i> <span class="glyphicon glyphicon-lamp glyphicon-align-left"></span>
+                   </i>
+              </a>
+              <button  class="button" id="random" onclick="random()">Random quote</button>
+          </div>
+     </div>
+    <script type="text/javascript">
+        function random()
+           {
+            
+               var letters = '0123456789ABCDEF';
+               var color = '#';
+                    for (var i = 0; i < 6; i++ )
+                              {
+                                color += letters[Math.floor(Math.random() * 16)];
+                              }
+              
+              var text = "";
+              var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+              var p = (Math.random() * 50)+25;
+                   for( var i=0; i <p; i++ )
+                             {
+                               text += possible.charAt(Math.floor(Math.random() * possible.length));
+                             }
+               
+               document.body.style.background = color;
+               document.getElementById("span1").innerHTML=text;
+               document.getElementById("textbox").style.color=color;
+               document.getElementById("author").style.color=color;
+               document.getElementById("random").style.background=color;
+               document.getElementById("tweet-quote").style.background=color;
+               document.getElementById("tumblr-quote").style.background=color;
+               
+           }
+        
+        
+        
+        
+        
+        
+        
+    </script>    
+    
+    
+    
+</body>
+</html>

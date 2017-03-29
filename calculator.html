@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+ <head>
+         <title> Calculator </title>
+         <link rel="icon" type="image/png" href="C:\Users\Lalit Singh\Desktop\fb1.png"/>
+         <meta charset="utf-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1">
+         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+         <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+         <style>
+            h1
+             {
+                 font-family:Railway;
+                 text-align:center;
+                 color:white;
+                 padding-top:2%;
+             }
+            .container
+             {
+                 border:1px solid white;
+                 border-radius:8px;
+                 background-color:aliceblue;
+                 width:25%;
+                 height:450px;
+             }
+             
+             .calbase
+             {
+                 width:97%;
+                 height:15%;
+                 border:2px solid black;
+                 border-radius:5px;
+                 text-align:right;
+                 font-size:35px;
+                 float:center;
+                 margin-top:10px;
+             }
+             
+             .class1
+             {
+                 width:50px;
+                 height:50px;
+             }
+             
+         </style>
+     
+  </head>
+  <body background="cal.jpg">
+      <h1> Calculator </h1>
+                <div class="container">
+                         <div class="calbase">
+                               <div id="text">
+                                    <p id ="result">0</p>
+                                </div>
+                         </div>
+                               <div class="row">
+                                      </br>
+                                      <div class="col-md-3">
+                                            <button class="btn btn-danger class1" value='ac' onclick="AllClear()">AC</button>
+                                      </div>
+                                      <div class="col-md-3">
+                                            <button class="btn btn-danger class1" value='ce' onclick="Clear()">CE</button>
+                                      </div>
+                                      <div class="col-md-3">
+                                            <button class="btn btn-default class1" style="background-color:black;color:white;" value='/'
+                                                    onclick="Operate('/')">&divide;
+                                            </button>
+                                      </div>
+                                      <div class="col-md-2">
+                                            <button class="btn btn-default class1" style="background-color:black;color:white;" value='*'
+                                                    onclick="Operate('*')">x
+                                            </button>
+                                      </div>
+                               </div>
+                               <div class="row">
+                                      </br>
+                                      <div class="col-md-3">
+                                            <button class="btn btn-default class1" style="background-color:black;color:white;"value='7'
+                                             onclick="AddDigit('7')">7
+                                            </button>
+                                      </div>
+                                      <div class="col-md-3">
+                                            <button class="btn btn-default class1" style="background-color:black;color:white;" value='8'  
+                                                    onclick="AddDigit('8')">8
+                                            </button>
+                                      </div>
+                                      <div class="col-md-3">
+                                            <button class="btn btn-default class1" style="background-color:black;color:white;" value='9'
+                                                onclick="AddDigit('9')">9
+                                            </button>
+                                      </div>
+                                      <div class="col-md-2">
+                                            <button class="btn btn-default class1" style="background-color:black;color:white;" value='-'
+                                                    onclick="Operate('-')">-
+                                            </button>
+                                      </div>
+                               </div>
+                               <div class="row">
+                                      </br>
+                                      <div class="col-md-3">
+                                            <button class="btn btn-danger class1" style="background-color:black;color:white;"value='4'
+                                                    onclick="AddDigit('4')">4
+                                            </button>
+                                      </div>
+                                      <div class="col-md-3">
+                                            <button class="btn btn-danger class1" style="background-color:black;color:white;" 
+                                                    value='5'onclick="AddDigit('5')">5
+                                            </button>
+                                      </div>
+                                      <div class="col-md-3">
+                                            <button class="btn btn-default class1" style="background-color:black;color:white;" value='6'
+                                                    onclick="AddDigit('6')">6
+                                            </button>
+                                      </div>
+                                      <div class="col-md-2">
+                                            <button class="btn btn-default class1" style="background-color:black;color:white;" value='+'
+                                                    onclick="Operate('+')">+
+                                            </button>
+                                      </div>
+                               </div>
+                               <div class="row">
+                                      </br>
+                                      <div class="col-md-3">
+                                            <button class="btn btn-danger class1" style="background-color:black;color:white;"value='1'
+                                                    onclick="AddDigit('1')">1
+                                            </button>
+                                      </div>
+                                      <div class="col-md-3">
+                                            <button class="btn btn-danger class1" style="background-color:black;color:white;" value='2'
+                                                    onclick="AddDigit('2')">2
+                                            </button>
+                                      </div>
+                                      <div class="col-md-3">
+                                            <button class="btn btn-default class1" style="background-color:black;color:white;" value='3'
+                                                    onclick="AddDigit('3')">3
+                                            </button>
+                                      </div>
+                                      <div class="col-md-2">
+                                            <button class="btn btn-default class1" style="background-color:black;color:white;" value='%'
+                                                    onclick="Operate('%')">%
+                                            </button>
+                                      </div>
+                               </div>
+                               <div class="row">
+                                      </br>
+                                      <div class="col-md-6">
+                                            <button class="btn btn-danger class1" style="background-color:black; color:white;width:90%;" 
+                                                value='0' onclick="AddDigit('0')">0
+                                         </button>
+                                      </div>
+                                      
+                                      <div class="col-md-3">
+                                            <button class="btn btn-default class1" style="background-color:black;color:white;" value='.'
+                                                    onclick="Dot()">.
+                                                    
+                                            </button>
+                                      </div>
+                                      <div class="col-md-2">
+                                            <button class="btn btn-default class1" onclick="Calculate()" 
+                                                    style="background-color:green;color:white;" 
+                                              value='=' >=
+                                            </button>
+                                      </div>
+                               </div>
+                         </div>
+                         
+                </div>
+<script>
+    Memory  = "0";      // initialise memory variable
+    Current = "0";      //   and value of Display ("current" value)
+    Operation = 0;      // Records code for eg * / etc.
+    MAXLENGTH = 10;
+  function AddDigit(dig)
+    {
+       if (Current.length > MAXLENGTH)
+       { Current = "Aargh! Too long"; //limit length
+       } else
+       { if (    (eval(Current) == 0)
+              && (Current.indexOf(".") == -1)
+            )
+           { Current = dig;
+           } else
+           { Current = Current + dig;
+           }
+    } 
+    $("#result").text(Current);
+    }
+    function Dot()                  //PUT IN "." if appropriate.
+ {
+  if ( Current.length == 0)     //no leading ".", use "0."
+    { Current = "0.";
+    } else
+    {  if ( Current.indexOf(".") == -1)
+         { Current = Current + ".";
+    }   }
+   
+ }
+function Clear()                //CLEAR ENTRY
+ { Current = "0";
+    $("#result").text(Current);
+ }
+
+function AllClear()             //Clear ALL entries!
+ { Current = "0";
+   Operation = 0;                //clear operation
+   Memory = "0";                  //clear memory
+    $("#result").text(Current);
+ }
+function Operate(op)            //STORE OPERATION e.g. + * / etc.
+ {
+  if (op.indexOf("*") > -1) { Operation = 1; }    //codes for *
+  if (op.indexOf("/") > -1) { Operation = 2; }       // slash (divide)
+  if (op.indexOf("+") > -1) { Operation = 3; }       // sum
+  if (op.indexOf("-") > -1) { Operation = 4; } 
+  if (op.indexOf("%") > -1) { Operation = 5; }       // difference
+
+  Memory = Current;                 //store value
+  Current = "";                     //or we could use "0"
+   $("#result").text(Current);
+ }
+function Calculate()            //PERFORM CALCULATION (= button)
+ { 
+  if (Operation == 1) { Current = eval(Memory) * eval(Current); Current = Current.toFixed(2);if(Current.length>10){Current="limit cross";}}
+  if (Operation == 2) { Current = eval(Memory) / eval(Current); Current = Current.toFixed(2);if(Current.length>10){Current="limit cross";}}
+  if (Operation == 3) { Current = eval(Memory) + eval(Current);Current = Current.toFixed(2);if(Current.length>10){Current="limit cross";} }
+  if (Operation == 4) { Current = eval(Memory) - eval(Current);Current = Current.toFixed(2);if(Current.length>10){Current="limit cross";} }
+  if (Operation == 5) { Current = eval(Memory) % eval(Current);Current = Current.toFixed(2);if(Current.length>10){Current="limit cross";} }
+  Operation = 0;                //clear operation
+  Memory    = "0";              //clear memory
+   $("#result").text(Current);
+ }
+function FixCurrent()
+ {
+  Current = document.Calculator.Display.value;
+  Current = "" + parseFloat(Current);
+  if (Current.indexOf("NaN") != -1)
+    { Current = "Aargh! I don't understand";
+    }
+   $("#result").text(Current);
+ }
+
+</script>
+  </body>
+</html>
